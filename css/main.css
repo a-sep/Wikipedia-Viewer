@@ -20,9 +20,12 @@ a.btn {
 }
 
 /* usuwa efekt podświetlanej ramki pola input*/
-.form-control:focus {
+.form-control:focus,
+.btn:focus, .btn:active {
+    outline: none;
     border-color: transparent;
     box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 .input-group {
@@ -33,16 +36,21 @@ a.btn {
 
 #search-input {
     height: 40px;
-    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
 }
 
 #close-search .btn {
     background: white;
     color: #002F2F;
     height: 40px;
-    width: 60px;
-    border-radius: 20px;
-    margin-left: -35px;
+    width: 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    -webkit-border-top-right-radius: 20px;
+    -webkit-border-bottom-right-radius: 20px;
 }
 
 #search-icon {
@@ -60,6 +68,9 @@ a:hover,
     text-decoration: none;
 }
 
+footer{
+    margin-top: 1em;
+}
 /* ========================== paleta kolorów ==============================*/
 #colorTest {
     color: #E6E2AF;

@@ -9,10 +9,9 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,35 +22,25 @@
 </head>
 <body>
 
-
 <div class="container text-center display-table">
     <div class="display-table-cell-middle">
         <h3>Wikipedia Viewer</h3>
-        <a class="btn btn-lg btn-link" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">Get Random
-            Article</a>
+        <a class="btn btn-lg btn-link" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">
+            Get Random Article</a>
+        <p class="small">or search</p>
 
-
-        <div class="click-hide-effect">
-            <div class="input-group">
-                <input type="text" class="form-control hide" placeholder="Search..." autofocus="disabled"
+        <div>
+            <div class="input-group hide">
+                <input type="text" class="form-control" placeholder="Search..." autofocus="true"
                        id="search-input">
-                <span class="input-group-btn" id="close-search"><button class="btn hide"><i class="pull-right fa fa-close"></i>
-                </button></span>
-                <!--<i class="btn fa fa-close input-group-btn hide" id="close-search"></i>-->
+                <span class="input-group-btn" id="close-search">
+                    <button class="btn">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </span>
             </div>
             <i class="btn fa fa-4x fa-search" id="search-icon"></i>
         </div>
-
-        <!--<div class="ca hoverEffect" style="height:40%">-->
-        <!--<div class="imageContainer">-->
-        <!--<span>Some Image</span>-->
-        <!--</div>-->
-        <!--<div class="showContainer">-->
-        <!--<span>New Image</span>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <br/>
 
         <footer class="footer text-center">
             <p class="text-muted">
