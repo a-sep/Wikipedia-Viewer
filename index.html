@@ -23,14 +23,14 @@
 <body>
 
 <div class="container text-center display-table">
-    <div class="display-table-cell-middle">
+    <div class="display-table-cell-middle" id="div-middle">
         <h3>Wikipedia Viewer</h3>
         <a class="btn btn-lg btn-link" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank">
             Get Random Article</a>
         <p class="small">or search</p>
 
         <div>
-            <div class="input-group hide animated fadeIn">
+            <div class="input-group hide animated zoomIn">
                 <input type="text" class="form-control" placeholder="Search..." autofocus="true"
                        id="search-input">
                 <span class="input-group-btn" id="close-search">
@@ -41,6 +41,8 @@
             </div>
             <i class="btn fa fa-2x fa-search animated fadeIn" id="search-icon"></i>
         </div>
+
+        <div class="container" id="result"></div>
 
         <footer class="footer text-center">
             <p class="text-muted">

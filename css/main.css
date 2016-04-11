@@ -3,7 +3,7 @@
 body {
     background-color: #002F2F;
     color: #E6E2AF;
-    height: 100%;
+    /*height: 100%;*/
     margin: 0;
     padding: 0;
     text-shadow: 1.5px 1.5px 0 rgba(0, 0, 0, 0.3);
@@ -71,7 +71,7 @@ a:hover,
 }
 
 footer{
-    margin-top: 1em;
+    margin-top: 1.5em;
 }
 /* ========================== paleta kolorów ==============================*/
 #colorTest {
