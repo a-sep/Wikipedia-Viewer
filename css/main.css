@@ -34,7 +34,7 @@ a.btn {
 
 .input-group {
     margin: auto;
-    width: 35%;
+    width: 30%;
     min-width: 150px;
     /*-webkit-animation-delay: 1s;*/
 }
@@ -59,9 +59,16 @@ a.btn {
 
 }
 
+h4{
+    margin-top: 1em;
+    color: #4cae4c;
+}
+
+
 a {
     color: inherit;
 }
+
 
 a:hover,
 .btn:hover,

@@ -1,77 +1,60 @@
-//========= ver. 0.5  ===========
-
+//========= ver. 1.0  ===========
 function search(userInput) {
     $.ajax({
         url: 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=' + userInput,
-        data: {
-            format: 'json'
-        },
-        dataType: 'jsonp'
-    }).done(function (data) {
-
-        //TODO ...wyświetlić wyszukane dane w div id=result
-
-        console.log(data[1][1] + " next" + data[2][1]);
-
-        // foreach
-        // $("#result").append("<div> data[1][1] </div><div> data[2][1] </div><div> data[3][1] </div>");
-        // $("#result").text(data[1][1]);
+        type: 'GET',
+        dataType: 'jsonp',
+        headers: {'Api-User-Agent': 'Wikipedia-Viewer'}
+    }).success(function (data, status) {
+        console.log("success... " + status + ' -data- ' + data);
 
         for (var i = 0; i < data[1].length; i++) {
-
-
-            $("#result").append('<div class=""><a href=' + data[3][i] + '><p><h3>' + data[1][i] + '</h3>' + data[2][i] + '</p></a></div>');
-
+            $("#result").append('<a href=' + data[3][i] + ' target="_blank">' +
+                '<blackquote>' +
+                '<h4>' + data[1][i] + '</h4>' +
+                '<p>' + data[2][i] + '</p>' +
+                '</blackquote>' +
+                '</a>');
         }
 
-
-        // var txt1 = "<p>"+ data[1][1] +"</p>";               // Create element with HTML
-        // var txt2 = $("<p></p>").text("Text.");   // Create with jQuery
-        // var txt3 = document.createElement("p");  // Create with DOM
-        // txt3.innerHTML = "Text.";
-        // $("p").append(txt1, txt2, txt3);
-
-
-        // $('.my-quote').text(data.quoteText);
-        // $('.my-author').text(data.quoteAuthor);
-        // $("#tweet").attr('href', "https://twitter.com/intent/tweet?text=" + text + '  ' + data.quoteAuthor);
-
+    }).error(function (data, status) {
+        console.log("error... " + status);
     });
+
 }
 
-
 $(document).ready(function () {
-    // after pressing search icon
+    // after pressing search icon hide it and show input field
     $(".fa-search").on("click", function () {
         $(".input-group").removeClass('hide');
         $(".fa-search").addClass('hide');
     });
 
-
+    //after pressing close(x) button hide input, clear screen and show search button
     $(".input-group-btn").on("click", function () {
         $(".input-group").addClass('hide');
         $(".fa-search").removeClass('hide');
         $("#div-middle").addClass('display-table-cell-middle');
-        $('#search-input').val(''); // clear inputs value
-        $('#result').removeChild(); // clear inputs value
-
-        // TODO funkcja wyczyścić stronke
+        $('#search-input').val(''); // clear inputs field
+        $('#result').empty(); // clear screen
     });
 
     // if user has pressed enter
     $("#search-input").keyup(function (e) {
-        if (e.keyCode === 13) {
-            search($('#search-input').val()); // search  api with users value
+        var text = encodeURIComponent($('#search-input').val());
+        if (e.which === 13) {
+            $("#search-input").change(function () {
+                $('#result').empty(); // clear screen
+            });
+            search(text); // search  api with users value
             $("#div-middle").removeClass('display-table-cell-middle');
         }
     });
 });
 
-// https://en.wikipedia.org/w/api.php?action=opensearch&format=jsonfm&search=kot
-
 
 // $.ajax({
-//     url: '//www.mediawiki.org/w/api.php?format=jsonty&action=query&meta=siteinfo&siprop=general&callback=?',
+//     url: 'https://en.wikipedia.org/w/api.php?action=opensearch&format=jsonfm&search='+ userInput,
 //     data: {
 //         format: 'json'
 //     },
