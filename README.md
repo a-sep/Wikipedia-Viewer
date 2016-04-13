@@ -1,6 +1,7 @@
 # Wikipedia-Viewer
 
-ver. 1.0
+ver. 2.0
 
 freeCodeCamp project...
-front end - ready
+frontend - ready
+backend - ready

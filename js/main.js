@@ -50,14 +50,3 @@ $(document).ready(function () {
         }
     });
 });
-
-
-// $.ajax({
-//     url: 'https://en.wikipedia.org/w/api.php?action=opensearch&format=jsonfm&search='+ userInput,
-//     data: {
-//         format: 'json'
-//     },
-//     dataType: 'jsonp'
-// }).done( function ( data ) {
-//     ...
-// } );
