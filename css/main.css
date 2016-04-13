@@ -72,7 +72,7 @@ a.btn {
     color: #E6E2AF;
 }
 
-a:hover,
+a:hover, a:visited,
 .btn:hover,
 #close-search .btn:hover {
     color: #A7A37E;
