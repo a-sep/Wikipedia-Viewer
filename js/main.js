@@ -1,26 +1,25 @@
-//========= ver. 1.0  ===========
+//========= ver. 2.0  ===========
 function search(userInput) {
     $.ajax({
-        url: 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=' + userInput,
+        url: 'https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts%7Cinfo&generator=search&exchars=500&exlimit=20&exintro=1&inprop=url&gsrsearch=' + userInput + '&callback=?',
         type: 'GET',
         dataType: 'jsonp',
         headers: {'Api-User-Agent': 'Wikipedia-Viewer'}
-    }).success(function (data, status) {
-        console.log("success... " + status + ' -data- ' + data);
-
-        for (var i = 0; i < data[1].length; i++) {
-            $("#result").append('<a href=' + data[3][i] + ' target="_blank">' +
-                '<blackquote>' +
-                '<h4>' + data[1][i] + '</h4>' +
-                '<p>' + data[2][i] + '</p>' +
-                '</blackquote>' +
+    }).success(function (data,status) {
+        // console.log(data.query.pages);
+        $(data.query.pages).each(function () {
+            $.each(this, function () {
+                // console.log(this.fullurl);
+            $("#result").append('<a href=' + this.fullurl + ' target="_blank">' +
+                '<blockquote>' +
+                '<h4>' + this.title + '</h4>' + this.extract +
+                '</blockquote>' +
                 '</a>');
-        }
-
+            });
+        });
     }).error(function (data, status) {
         console.log("error... " + status);
     });
-
 }
 
 $(document).ready(function () {

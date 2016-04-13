@@ -10,14 +10,6 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-h3 {
-    color: #A7A37E;
-}
-
-a.btn {
-    color: #E6E2AF;
-}
-
 /* usuwa efekt podświetlanej ramki pola input*/
 .form-control:focus,
 .btn:focus, .btn:active {
@@ -58,16 +50,27 @@ a.btn {
 
 }
 
+h3 {
+    color: #A7A37E;
+}
 h4{
     margin-top: 1em;
     color: #4cae4c;
 }
 
-
+blockquote{
+ border-color: #002F2F;
+}
+blockquote:hover{
+    border-color: #A7A37E;
+}
 a {
     color: inherit;
 }
 
+a.btn {
+    color: #E6E2AF;
+}
 
 a:hover,
 .btn:hover,
